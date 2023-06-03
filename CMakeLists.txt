@@ -4,6 +4,10 @@ project(LED_GAME)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(LED_GAME main.cpp Game.cpp HALFactory.cpp HAL.cpp Terminal.cpp)
+include_directories(./)
 
-target_link_libraries(LED_GAME pthread)
+file(GLOB CPP_SOURCES "./*.cpp")
+
+add_executable(LED_GAME ${CPP_SOURCES})
+
+add_subdirectory(tests)

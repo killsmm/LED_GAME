@@ -9,10 +9,8 @@ public:
     Terminal();
     ~Terminal();
     void init() override;
-    void setLed1(std::uint8_t color) override;
-    void setLed2(std::uint8_t color) override;
-    void setLed3(std::uint8_t color) override;
-    int readButtonPressed(bool blocking) override;
+    char readButtonPressed(bool blocking) override;
+    void setResult(std::vector<std::uint8_t> result, int keysPressed) override;
 };
 
 #endif /* TERMINAL_H */
